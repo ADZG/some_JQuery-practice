@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.2.js"></script>
+    <script>
+    /* 
+    
+    
+    
+    
+    
+    */
+    // .next() 当前元素之后的，紧邻的着的第一个兄弟元素(当前的元素的下一个)
+    // .nextAll() 当前元素之后的所有的兄弟元素   元素集合。不是一个元素
+    // .prev() 当前元素之前的紧邻着的兄弟元素(当前元素的上一个)
+    // .prevAll() 当前元素之前的所有兄弟元素    元素集合，不是一个元素
+    // .siblings();当前元素的所有兄弟元素、
+    // .prop();全部选择
+    // 注意链式编程时，这些方法调用后的对象
+
+    // 断链，对象调用方法后，返回的不是当前对象，再调用方法，吊用不了
+
+    $(function(){
+        $("ul>li").click(function(){
+            $(this).prevAll().css("backgroundColor","red").end().nextAll().css("backgroundColor","green")
+        })
+    })
+    // .end() 方法，可以恢复到断链之前的一个效果，对象,修复断链
+    </script>
+</head>
+<body>
+    <ul>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+
+
+    </ul>
+</body>
+</html>

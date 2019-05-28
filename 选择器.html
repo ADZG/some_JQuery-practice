@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      div{
+          width: 300px;
+          height: 200px;
+          background-color: red;
+      }
+      .cls{
+          display: block;
+          width: 100px;
+          height: 100px;
+          background-color: aqua;
+      }
+    </style>
+    <script src="./jquery-1.12.2.js"></script>
+    <script>
+
+        // id点击选择器
+        $(function(){
+            // 页面加载事件
+            // 当页面加载完成，才执行
+            // 获取按钮
+            $("#btn").click(function(){
+                // 设置div中显示内容
+                $("#dv").text("这是我第一次测试jquery");
+                // text相当于dom中的innertext或者textcontante
+                $("#dv").css("backgroundColor","yellow");
+                // 设置元素的样式
+            })
+        })
+    
+        // 标签选择器
+        // 页面加载事件
+        $(function(){
+            // 获取按钮，调用点击事件，获取所有的p标签
+            $("#btn").click(function(){
+                $("P").text("我在测试jquery");
+            })
+        })
+        
+        // 类选择器
+        $(function(){
+            $("#btn").click(function(){
+                $(".cls").css("backgroundColor","red");
+            })
+        })
+        
+
+        // 标签加类样式的选择
+        $(function(){
+            $("#btn").click(function(){
+                $("li.cls").css("backgrandColor","green");
+            })
+        })
+
+
+        // 多条件选择器
+        // 每个标签之间逗号隔开
+        $(function(){
+            $("#btn").click(function(){
+                $("p,span,li,div").css("backgrandColor","green");
+            })
+        })
+
+
+        // 层次选择器
+        // 中间用空格可开
+        $(function(){
+            $("#btn").click(function(){
+                // 获取的是div中所有的子元素li 不论子还是孙子元素
+                $("#dd li").css("backgrandColor","green");
+            })
+        })
+
+        // 子代选择器，只选择当前子代
+        $(function(){
+            $("#btn").click(function(){
+                // 获取的是dd下面的儿子元素ul 
+                $("#dd>ul").css("backgrandColor","green");
+            })
+        })
+
+
+        // 奇数偶数选择器
+        $(function(){
+            $("#btn").click(function(){
+                // 获取的是dd下面的儿子元素ul 
+                $("#dd>li:even").css("backgrandColor","#66ccff");
+                // 表示的是偶数选择，但是实际用户看到的是奇数，因为是第一个0开始
+
+                $("#dd>li:odd").css("backgrandColor","#66ccff");
+                // 表示选择奇数的li，但是用户看到是偶数的
+            })
+        })
+        
+        // 索引选择器
+        $(function(){
+            $("#btn").click(function(){
+                // 获取ul中的缩影为4的li标签元素
+                $("#dd>ul>li:eq(4)").css();
+                // 获取ul中的索引大于4的li标签元素
+                $("#dd>ul>li:gt(4)").css();
+                // 获取的是ul中索引小于4的标签元素
+                $("#dd>ul>li:lt(4)").css();
+            })
+        })
+        .prop();//全部选择的选择器
+        
+    </script>
+</head>
+<body>
+    <input type="button" value="显示效果" id="btn">
+    <div id="dv"></div>
+
+    <p></p>
+    <p></p>
+    <p></p>
+    <span class="cls"></span>
+
+    <ul>
+        <li class="cls"></li>
+        <li></li>
+        <li class="cls"></li>
+        <li></li>
+    </ul>
+
+
+
+    <div id="dd">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+</body>
+</html>

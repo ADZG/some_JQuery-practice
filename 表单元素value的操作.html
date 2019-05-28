@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.2.js"></script>
+    <script>
+        $(function(){
+            // 获取当前input标签的val值
+            $(btn).click(function(){
+                console.log($(this).val());
+                $("#txt").val("现在有内容了");
+
+                // 获取文本域中的内容
+                console.log($("textarea").val());
+                // 获取表单域中内容用下面这个
+                console.log($("textarea").text());
+
+
+
+                $("#se").val(2);//可以改变某一项选择
+
+            })
+        })
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <input type="button" value="显示效果" id="btn">
+    <input type="radio" value="man" name="sex">男
+    <input type="text" value="文本框" id="txt">
+    <input type="checkbox" value="复选" id="ck">复选
+    <input type="submit" value="提交" id="sb">
+
+    <!-- 文本域 -->
+    <textarea name="" id="" cols="30" rows="10">我还是一个</textarea>
+
+    <select name="" id="se">
+        <option value="1">直接改变</option>
+        <option value="2">直接改变</option>
+        <option value="3">直接改变</option>
+    </select>
+
+    
+
+</body>
+</html>

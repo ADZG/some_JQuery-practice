@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.2.js"></script>
+    <style>
+        div{
+
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    
+    </style>
+    <script>
+    /* 
+    dom中创建元素的三种方法
+
+    1 document.write("标签代码");缺陷，页面加载后，创建元素，把页面中原油的内容，全部干掉
+    2 innerHTMl
+    3 document.creatElement("标签的名字");
+    创建之后，需要插入append();
+    
+    jquery中有两种方式创建
+
+    1 $("标签的代码")
+    2 对象.html("标签的代码")
+    
+    
+    
+     */
+    $(function(){
+        $("#btn").click(function(){
+            // 创建元素
+            var obj=$("<a href='www.baidU.com'>百度</a>");
+            $("#dv").append(obj);
+            // .append();这个方法，可以把创建的新标签，追加到到某个元素中
+
+
+            $("#dv").prepend(obj);
+            // 把创建的新元素，插入到某个元素的前面 是在元素里面创建的
+
+
+            $("#dv").after(obj);
+            // 把元素添加的到当前元素的后面(作为兄弟元素来添加，不是在元素里面创建的)
+
+            $("#dv").before(obj);
+            // 把创建的新元素，添加到当前元素的前面的，(作为兄弟元素，不是在里面创建)
+        })
+    })
+    
+    
+    </script>
+</head>
+<body>
+    <input type="button" value="创建元素" id="btn">
+    <div id="dv"></div>
+</body>
+</html>

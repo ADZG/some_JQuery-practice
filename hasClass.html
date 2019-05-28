@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+    <style>
+        .cls{
+            background-color: black;
+        }
+    </style>
+    <script src="./jquery-1.12.2.js"></script>
+    <script>
+    $(function(){
+        $("#btn").click(function(){
+           if($("body").hasClass("cls")){
+               $("body").removeClass("cls");
+               $("#btn").val("关灯")
+           }else{
+               $("body").addClass("cls");
+               $("#btn").val("开灯");
+           }
+        $("body").toggleClass("cls");
+        // .toggleClass() /切换类样式
+        })
+    })
+
+    // 两个点 
+    // .hasClass("cls") 查询元素是否有这个类样式  也可以用于查询某个元素是否应用了样式
+    // .toggleClass("") 点击之后切换括号里面的类样式
+    
+    
+    </script>
+</head>
+<body class="cls">
+    <input type="button" value="开关灯" id="btn">
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.2.js"></script>
+    <script>
+    $(function(){
+        $("#btn").bind({"mouseover":function(){},"click":function(){},"mouseout":function(){}})
+        // 为元素绑定多个事件
+        $("#btn").bind("click",function(){
+            $("<p>标签</p>").appendTo($("div"));
+            // 为当前div里面的p标签，绑定鼠标点击事件
+            $("div").delegate("p","click",function(){
+                alert("点击了")
+            })
+        })
+        
+    })
+    
+    // .delegate()方法
+    // 参数有三个，
+    // 1 要绑定的元素
+    // 2 要绑定的事件
+    // 3 处理函数
+    // 绑定多个事件的时候，用键值对的方式
+    // .bind({"事件":"处理函数","事件":"处理函数"});
+
+    $(function(){
+        $("#btn").on("click",function(){
+            // 创建p添加到div中
+            $("<p>标签</p>").appendTo($("div"));
+            // 为div的p标签绑定事件
+            $("div").on("click","p",function(){
+                alert("子元素事件触发");
+            })
+        })
+    })
+
+    // .on() 方法
+
+    // 1 两个参数的时候 事件 处理函数
+    // 2 三个参数的时候， 事件 绑定事件的元素 处理函数
+    // on是父级函数调用的，目的，为子级绑定事件
+    
+    // 参数:父级元素.on("事件类型","子级元素","事件处理函数");
+
+
+    // 一般都是用on的方式绑定事件的
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="增加标签">
+    <div></div>
+</body>
+</html>

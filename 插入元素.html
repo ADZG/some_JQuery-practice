@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.2.js"></script>
+    <script>
+    $(function(){
+        $("#btn").click(function(){
+            // 点击按钮后，将dv里面的p标签，插入到dv1里面
+            $("#dv1").append($("#dv>p"));
+
+            var pobj=$("<p></p>");
+            pobj.text("这是一个标签p");
+            // 第一种方式dv1里面插入一个p标签
+            $("#dv1").append(pobj);
+
+            // 第二种方式。将p标签主动插入到dv1中
+            pobj.appendTo($("#dv1"));
+
+            // 两个区别 append是被动的，
+            // appendTo是主动的
+        })
+    })
+    
+    // 对象.prepend(创建好的元素)  把创建好的元素直接插入到当前对象的第一个子元素的前面
+    </script>
+</head>
+<body>
+    <input type="button" value="改变位置" id="btn">
+    <div id="dv">
+        <p>时间</p>
+    </div>
+    <div id="dv1"></div>
+</body>
+</html>

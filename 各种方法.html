@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .cls{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .cls2{
+            border: 1px solid #ccc;
+        }
+    </style>
+    <script src="./jquery-1.12.2.js"></script>
+    <script>
+    $(function(){
+        $("#btn").click(function(){
+            // 点击按钮修改默认文本
+            $("txt").val("一个")
+            // 相当于dom中的value值
+            // 如果设置多个属性值
+            $("txt").css({"width":"800px","backgroundColor":"red"})
+            // 如果是多对属性，用键值对的方式表示
+            // $("txt").addClass("cls");
+            $("txt").addClass("cls").addClass("cls2");
+            // 两个类样式添加，可以直接合在一起写
+            $("txt").addClass("cls cls2");
+            
+
+
+            // 点击按钮后，移除某个样式
+            $("txt").removeClass("cls");
+
+            // 方法中什么也不写，移除的是改元素所有的样式
+            $("txt").removeClass();
+
+            
+        })
+    })
+
+    .html()//方法 设置标签中间显示其他标签级内容，类似于innnerHTML;
+
+    .val("")//方法 小括号中写内容就是设置元素的value属性
+    
+    // 如果小括号中什么都不写。获取元素的value属性值
+    // 就是元素的value属性值。封装成了方法
+    .CSS();//该方法如果值设置一个样式的属性和值，那么这个方法写两个参数，
+    // 第一个是属性，第二个参数是值 .css("属性":"值")类似于css的方法
+    // 如果说设置多个属性
+    .addClass("") //可以直接给元素添加类样式，但是不需要加点的
+    // 如果有多个类样式需要添加，可以直接在后面.addClass("") 或者中间空格隔开，直接添加;
+
+    .removeClass("")//移除某个样式、
+
+
+
+    // table切换的核心
+    // 给所有的table切换栏应用隐藏样式，当前点击的元素样式为显示
+
+    // var index=$(this).index() 获取当前点击事件元素的索引
+    // 可以用eq("+index+").siblings()当前的索引元素的兄弟元素.给他们添加隐藏的样式.
+    // 当前索引的菜单类目的样式改为显示
+    // 给索引对应样式显示，其他的兄弟元素全部隐藏
+
+    .push();//把数据追加到某个元素中
+
+
+
+    </script>
+</head>
+<body>
+    <input type="button" value="显示" id="btn">
+    <input type="text" value="这个是文本框" id="txt">
+</body>
+</html>

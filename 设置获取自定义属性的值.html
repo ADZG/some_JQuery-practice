@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script src="./jquery-1.12.2.js"></script>
+    <script>
+        $(function(){
+            $("#btn").click(function(){
+                // .attr() 可以写两个参数。第一个是属性，第二个是属性的值,
+                // 如果只写了一个参数，则获取该元素的属性值
+               var obj=$("<a></a>");
+                obj.attr("title","一个");
+                obj.text("超链接");
+                $("#dv").append(obj);
+                console.log(obj);
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="设置" id="btn">
+    <div id="dv">
+
+    </div>
+</body>
+</html>

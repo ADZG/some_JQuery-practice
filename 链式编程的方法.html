@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    div{
+    width: 100px;
+    height: 100px;
+    background-color: #88ddcc
+    }
+    </style>
+    <script src="./jquery-1.12.2.js"></script>
+    <script>
+    // 所谓的链式编程.就是
+    // 对象.方法.方法.方法........
+    // 但是用完方法之后，对象不能改变，否则会断链
+    $(function(){
+        $("btn").click(function(){
+            $("div").css("width","200px").html("<P> 要继续坚持</P>");
+            // 要想链式编程，调用完这个方法之后，返回来的还是这个对象，否则无法完成链式编程
+            // 一般如果调用方法，但是方法里面的是空，则不能使用链式编程，对象已经改变了，或者没有对象了
+        }).click(function(){
+            $(this).css("font-size","12px").css("height","790px").css("font-family","宋体")
+        })
+    })
+    
+    </script>
+</head>
+<body>
+    <input type="button" value="变化" id="btn">
+    <div >
+    </div>
+</body>
+</html>

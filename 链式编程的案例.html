@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+    <script src="./jquery-1.12.2.js"></script>
+    <script>
+    $(function(){
+        $("#btn").click(function(){
+            $(this).val("什么");
+        }).mouseover(function(){
+            $(this).css({"width":"100px","height":"200px"});
+        }).mouseout(function(){
+            $(this).css("background","green");
+        })
+    })
+    </script>
+</head>
+<body>
+    <input type="button" value="显示" id="btn">
+    <input type="button" value="隐藏" id="btn2">
+</body>
+</html>

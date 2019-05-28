@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.2.js"></script>
+    <script>
+    
+    $(function(){
+        // 鼠标进入后，当前的li标签透明度为1 其他的li标签透明度为0.5
+        $(".dv>ul>li").mouseover(function(){
+        // 当前li的兄弟元素的透明度变暗
+            $(this).siblings("li").css("opacity",0.5);
+        })
+
+        
+        // find()方法，针对当前的元素找里面一些其他的元素
+        $(".dv").mouseout(function(){
+            $(this).find("li").css({"opacity":"1","backgrond":""});
+            
+        })
+    })
+    
+    // .siblings("li") 兄弟选择器
+    </script>
+</head>
+<body>
+    <div class="dv">
+        <ul>
+            <li>12</li>
+            <li>12</li>
+            <li>12</li>
+            <li>12</li>
+            <li>12</li>
+        </ul>
+    </div>
+</body>
+</html>

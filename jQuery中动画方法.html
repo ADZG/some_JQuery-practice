@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+    <script src="./jquery-1.12.2.js"></script>
+    <script>
+      // 点击按钮隐藏div
+      $(function() {
+        $("#btn").click(function() {
+          $("div").hide(); //隐藏
+          //hide方法中可以写参数 参数类型1 数字类型 2 字符串类型
+        //   数字类型 1000表示的是毫秒----一秒
+        //   字符串类型 "slow" "normal" "faSt" 动画的速度 慢 中 快
+        });
+        $("#btn").click(function() {
+
+          //show方法中可以写参数 参数类型1 数字类型 2 字符串类型
+        //   数字类型 1000表示的是毫秒----一秒
+        //   字符串类型 "slow" "normal" "faSt" 动画的速度 慢 中 快
+        $("div").show("fast",1000);
+        });
+        });
+      });
+
+
+
+
+      $(function(){
+          $("#btn").click(function(){
+            //   回调函数 
+            $("div>img").hide(1000,function(){
+                alert("坚持就是胜利")
+            })
+          })
+      })
+
+      $(function(){
+          $("#btn").click(function(){
+            //   回调函数 
+            $("div>img").show(1000,function(){
+                alert("坚持就是结束")
+            })
+          })
+      })
+
+    </script>
+
+
+    <script>
+
+        $(function(){
+            $("#btn").click(function(){
+                // 获取div，里面的最后一张图片
+                $("div>img").last("img").hide(1000,function(){
+                    // .arguments.callee 相当于递归
+                    $(this).prev().hide(1000,arguments.callee);
+                    // .prev() 当前元素的前一个兄弟元素
+                });
+            })
+        })
+
+
+        //  .last("img") 一组元素中最后一个元素
+
+
+
+        $(function(){
+            $("#btn").click(function(){
+                // 获取div，里面的最后一张图片
+                $("div>img").last("img").stop().hide(1000,function(){
+                    // .arguments.callee 相当于递归
+                    $(this).prev().hide(1000,arguments.callee);
+                    // .prev() 当前元素的前一个兄弟元素
+                });
+            })
+        })
+        // .stop()方法，会停止当前动画
+    </script>
+  </head>
+  <body>
+    <input type="button" value="隐藏" id="btn2" />
+    <input type="button" value="显示" id="btn" />
+    <div>
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+    </div>
+  </body>
+</html>

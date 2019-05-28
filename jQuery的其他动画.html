@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 100px;
+        height: 100px;
+        background-color: #66ccff;
+    }
+    
+    </style>
+    <script src="./jquery-1.12.2.js"></script>
+    <script>  
+    
+    $(function(){
+        $("#btn1").click(function(){
+            $("div").slideUp();
+        })
+        $("#btn2").click(function(){
+            $("div").slideDown();
+        })
+        $("#btn3").click(function(){
+            $("div").slideToggle();
+        })
+    })
+
+    // 以上的三个方法，都可以加参数
+    // 参数：可以写数字类型 1000毫秒--一秒
+    // 参数:字符串 slow normal fast
+
+
+
+    
+    $(function(){
+        $("#btn1").click(function(){
+            $("div").fadeIn(1000);
+            // 淡入
+        })
+        $("#btn2").click(function(){
+            $("div").fadeOut();
+            // D淡出
+        })
+        $("#btn3").click(function(){
+            $("div").fadeToggle()
+            // 切换
+        })
+
+        $("btn4").click(function(){
+            $("div").fadeTo(1000,0.3);
+            // 可以选择没有时间，直接0,.3. 到达一定的透明度
+        })
+    })
+    // 以上的三个方法，都可以加参数
+    // 参数：可以写数字类型 1000毫秒--一秒
+    // 参数:字符串 slow normal fast
+
+
+
+
+    </script>
+</head> 
+<body>
+    <input type="button" value="滑入" id="btn1">
+    <input type="button" value="滑出" id="btn2">
+    <input type="button" value="切换" id="btn3">
+    <input type="button" value="透明度变化" id="btn4">
+    <div>
+
+    </div>
+</body>
+</html>

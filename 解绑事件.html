@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.2.js"></script>
+    <script>
+        $(function(){
+            $("#btn").on("click",function(){
+                alert("点你娘");
+            })
+            $("#btn2").on("click",function(){
+                // .off() 参数：事件的名字
+                $("#btn").off("click");
+            })
+        })
+    </script>
+    <script>
+        //解绑事件
+        $(function(){
+            //bind绑定事件和unbind解绑事件
+        })
+        /* 
+        如果说父级元素和子级元素，都是通过正常方式绑定的
+        通过off解绑时候，父级元素的事件解绑了，子级元素的事件没有解绑
+
+        如果子级元素是通过父级元素通过调用dalegate的方式绑定的事件，父级元素使用off方式解绑事件
+        这个时候，父级元素和子级元素相同的事件都会被解绑
+
+        off(“click”,"**") 通过dalegate1的方式绑定的，他的子级元素事件，会被这种方式解绑，父级元素的事件还在
+        off()如果什么都不写，移除父级元素和子级元素的事件
+        
+        
+        
+        
+        */
+    
+    </script>
+</head>
+<body>
+    <input type="button" value="绑定事件" id="btn">
+    <input type="button" value="解绑事件" id="btn2">
+</body>
+</html>

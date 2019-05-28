@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+
+            width: 199px;
+            height: 100px;
+            background-color: rebeccapurple;
+        }
+    </style>
+    <script src="./jquery-1.12.2.js"></script>
+    <script>
+    
+    $(function(){
+        // 为div中的按钮绑定事件，获取事件对象中内容
+        $("#dv").on("click","input",function(event){
+            event.delegateTarget-----div调用了on的方法
+            event.currentTarget-----input div为input标签绑定的
+            event.target----触发的对象input的 真正的对象
+        })
+    })
+    
+    </script>
+</head>
+<body>
+    <div id="dv">
+        <input type="button" id="btn" value="按钮">
+
+    </div>
+</body>
+</html>
